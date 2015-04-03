@@ -1,0 +1,16 @@
+{
+  "name": "intro-to-mongoose",
+  "version": "0.0.1",
+  "description": "pluralsight course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "mongo",
+    "mongoose"
+  ],
+  "author": "@courington",
+  "license": "ISC"
+}
