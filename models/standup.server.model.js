@@ -12,34 +12,3 @@ var standupSchema = new Schema({
 
 // export the model
 module.exports = mongoose.model('Standup', standupSchema);
-
-// // disabled _id
-// var noIdSchema = new Schema({name: String}, {_id: false});
-
-// // example of using Schema.add
-// var exampleSchema = new Schema;
-
-// var includeMiddleName = true;
-
-// if(includeMiddleName) {
-//     exampleSchema.add({
-//         memberName: {
-//             first: String,
-//             middle: String,
-//             last: String
-//         }
-//     });    
-// }
-// else {
-//     exampleSchema.add({
-//         memberName: {
-//             first: String,
-//             last: String
-//         }
-//     });
-// }
-
-// exampleSchema.add({
-//     project: String,
-//     createdOn: {type: Date, default: Date.now}
-// });
