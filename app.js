@@ -4,9 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var swig = require('swig');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 
 var mongoose = require('mongoose');
 // connect to mongolab
@@ -14,9 +14,12 @@ mongoose.connect('mongodb://demo:password@ds061371.mongolab.com:61371/standupmee
 
 var app = express();
 
+// This is where all the magic happens!
+app.engine('html', swig.renderFile);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -27,7 +30,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

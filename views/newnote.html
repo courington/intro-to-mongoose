@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+  
+  <div class="text-center">
+    <h1>new virtual stand-up meeting note</h1>
+    <p class="lead">User this form to enter your daily meeting notes</p>
+  </div>
+
+  <form class="form-horizontal" action="newnote" method="post">
+    <fieldset>
+        <!-- form name -->
+        <legend>Enter a Meeting Note</legend>
+
+        <!-- select name -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="memberName"></label>
+            <div class="col-md-4">
+                <select id="memberName" name="memberName" class="form-control">
+                    <option value="None">(Select Name)</option>
+                    <option value="Matt">Matt</option>
+                    <option value="Joseph">Joseph</option>
+                    <option value="Andrei">Andrei</option>
+                    <option value="Chase">Chase</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- select project -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="project"></label>
+            <div class="col-md-4">
+                <select id="project" name="project" class="form-control">
+                    <option value="None">(Select Name)</option>
+                    <option value="Macho">Macho</option>
+                    <option value="Jive">Jive</option>
+                    <option value="Awesome">Awesome</option>
+                    <option value="Cool">Cool</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- textarea -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="workYesterday">Work Yesterday</label>
+            <div class="col-md-6">
+                <textarea class="form-control" id="workYesterday" name="workYesterday"></textarea>
+            </div>
+        </div>
+
+        <!-- textarea -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="workToday">Work Today</label>
+            <div class="col-md-6">
+                <textarea class="form-control" id="workToday" name="workToday"></textarea>
+            </div>
+        </div>
+
+        <!-- textarea -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="impediment">Impediment</label>
+            <div class="col-md-6">
+                <textarea class="form-control" id="impediment" name="impediment"></textarea>
+            </div>
+        </div>
+
+        <!-- send -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="btnSaveNote">Save Note</label>
+            <div class="col-md-6">
+                <button id="btnSaveNote" name="btnSaveNote" btn btn-primary>Save Note</button>
+            </div>
+        </div>
+
+    </fieldset>
+  </form>
+
+{% endblock %}
