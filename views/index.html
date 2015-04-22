@@ -4,4 +4,36 @@
 
 {% block content %}
   <h1>Welcome to {{title}}</h1>
+  <p class="lead">this is a list of the last dozen meeting notes</p>
+
+  <div class="container">
+    <form action="/" method="post">
+        <div class="row clearfix">
+            <div class="col-md-4 column">
+                <select id="memberName" name="memberName" class="form-control">
+                    <option value="">(show all)</option>
+                    <option value="Matt">Matt</option>
+                    <option value="Joseph">Joseph</option>
+                    <option value="Andrei">Andrei</option>
+                    <option value="Chase">Chase</option>
+                </select>
+            </div>
+            <div class="col-md-4 column">
+                <button id="btnFilterNotes" name="btnFilterNotes" class="btn btn-primary">Filter</button>
+            </div>
+        </div>
+    </form>
+  </div>
+
+  <ul class="container list-style-none">
+    {% for note in notes %}
+    <li class="list-group-item">
+        <div><strong>Note From:</strong> {{note.memberName}} on {{note.createdOn.toUTCString()}} - for project: {{note.project}}</div>
+        <div><strong>Work yesterday:</strong> {{note.workYesterday}}</div>
+        <div><strong>Work today:</strong> {{note.workToday}}</div>
+        <div><strong>Impediment:</strong> {{note.impediment}}</div>
+    </li>
+    {% endfor %}
+  </ul>
+
 {% endblock %}
