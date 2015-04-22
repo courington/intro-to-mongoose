@@ -14,27 +14,26 @@ var standupSchema = new Schema({
     memberName: {
         type: String,
         required: true,
-        validator: memberNameValidator
+        validate: memberNameValidator
     },
     project: {
         type: String,
         required: true,
-        validator: requiredStringValidator
+        validate: requiredStringValidator
     },
     workYesterday: {
         type: String,
         required: true,
-        validator: requiredStringValidator
+        validate: requiredStringValidator
     },
     workToday: {
         type: String,
         required: true,
-        validator: requiredStringValidator
+        validate: requiredStringValidator
     },
     impediment: {
         type: String,
         required: true,
-        validator: requiredStringValidator,
         default: 'none'
     },
     createdOn: {

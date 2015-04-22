@@ -12,6 +12,7 @@ exports.create = function(req, res) {
     // save to mongo
     entry.save(function(err) {
         if(err) {
+            console.warn(err);
             var errMsg = 'Sorry, there was an error saving the stand-up meeting note.' + err.message;
             res.render('newnote', {title: 'Standup - New Note (error)', message: errMsg});
         }
